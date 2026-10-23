@@ -131,10 +131,27 @@
 
         .img-container img {
             max-width: 100%;
-            height: auto;
+            max-height: 500px;
+            object-fit: contain;
             border-radius: 8px;
             border: 1px solid #e2e8f0;
             box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .img-container img:hover {
+            transform: scale(1.01);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        /* Rotation class for upside-down image 3.2 */
+        .rotate-180 {
+            transform: rotate(180deg);
+        }
+
+        .rotate-180:hover {
+            transform: rotate(180deg) scale(1.01) !important;
         }
 
         .img-caption {
@@ -142,6 +159,49 @@
             color: var(--text-light);
             margin-top: 8px;
             font-style: italic;
+        }
+
+        .zoom-hint {
+            font-size: 0.8rem;
+            color: var(--accent);
+            margin-top: 4px;
+            font-weight: 500;
+        }
+
+        /* Image Zoom Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            padding-top: 50px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.85);
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            max-width: 90%;
+            max-height: 85vh;
+            border-radius: 8px;
+        }
+
+        .modal-content.rotate-180 {
+            transform: rotate(180deg);
+        }
+
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: #ffffff;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
         }
 
         footer {
@@ -185,13 +245,15 @@
             <h3>Process Visuals & Schematics</h3>
             
             <div class="img-container">
-                <img src="images/3.2.png" alt="Aspen Plus simulation model flowchart">
+                <img src="images/3.2.png" alt="Aspen Plus simulation model flowchart" class="rotate-180" onclick="openZoom(this)">
                 <div class="img-caption">Figure 3.2: Aspen Plus Simulation Flowchart for the Gasification Process</div>
+                <div class="zoom-hint">🔍 Click image to zoom in</div>
             </div>
 
             <div class="img-container">
-                <img src="images/3.1.png" alt="Downdraft gasifier schematic diagram">
+                <img src="images/3.1.png" alt="Downdraft gasifier schematic diagram" onclick="openZoom(this)">
                 <div class="img-caption">Figure 3.1: Schematic Diagram of the Modelled Downdraft Gasifier</div>
+                <div class="zoom-hint">🔍 Click image to zoom in</div>
             </div>
         </div>
 
@@ -221,9 +283,33 @@
 
     </div>
 
+    <!-- Zoom Modal -->
+    <div id="imageModal" class="modal" onclick="closeZoom()">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImg">
+    </div>
+
     <footer>
         <p>&copy; 2026 Md Rafiul Islam. Built for PhD Applications.</p>
     </footer>
+
+    <script>
+        function openZoom(imgElement) {
+            var modal = document.getElementById("imageModal");
+            var modalImg = document.getElementById("modalImg");
+            modal.style.display = "block";
+            modalImg.src = imgElement.src;
+            if (imgElement.classList.contains("rotate-180")) {
+                modalImg.classList.add("rotate-180");
+            } else {
+                modalImg.classList.remove("rotate-180");
+            }
+        }
+
+        function closeZoom() {
+            document.getElementById("imageModal").style.display = "none";
+        }
+    </script>
 
 </body>
 </html>
