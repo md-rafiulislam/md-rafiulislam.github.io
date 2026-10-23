@@ -2,21 +2,171 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Md Rafiul Islam - Home & Education</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Md Rafiul Islam | PhD Aspirant in Chemical Engineering</title>
+    <style>
+        :root {
+            --primary: #1e3a8a;
+            --primary-dark: #172554;
+            --accent: #0284c7;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text: #1e293b;
+            --text-light: #64748b;
+        }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            letter-spacing: -0.5px;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        nav {
+            background-color: #ffffff;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 15px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-light);
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary);
+            background-color: #f1f5f9;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -1px rgba(0,0,0,0.03);
+            border-top: 4px solid var(--accent);
+        }
+
+        h2 {
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #f1f5f9;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        li {
+            margin-bottom: 15px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        li::before {
+            content: "•";
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 1.2rem;
+            position: absolute;
+            left: 0;
+            top: -2px;
+        }
+
+        strong {
+            color: var(--primary-dark);
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+    </style>
 </head>
 <body>
-    <h1>Md Rafiul Islam</h1>
-    <p>Aspiring PhD applicant in Chemical Engineering targeting US universities. Focused on process modeling, energy systems, and sustainable technologies.</p>
 
-    <h2>Educational Background</h2>
-    <ul>
-        <li><strong>B.Sc. in Chemical Engineering</strong> — Rajshahi University of Engineering and Technology (RUET), Rajshahi, Bangladesh (CGPA: 3.22 / 4.00, Jan 2018 – Dec 2023)[cite: 1].</li>
-    </ul>
+    <header>
+        <h1>Md Rafiul Islam</h1>
+        <p>Aspiring PhD Candidate in Chemical Engineering | Process Modeling, Energy Systems & Sustainable Technologies</p>
+    </header>
 
-    <h2>Awards & Test Scores</h2>
-    <ul>
-        <li>Technical Scholarship (1st year to 4th year) issued by the Ministry of Education, Bangladesh[cite: 2].</li>
-        <li>IELTS Academic: Overall Band Score 7.0 (Listening: 7.5, Reading: 9.0, Writing: 5.5, Speaking: 6.0)[cite: 2].</li>
-    </ul>
+    <nav>
+        <a href="index.html" class="active">Home & Education</a>
+        <a href="research.html">Research & Projects</a>
+        <a href="work.html">Work & Experience</a>
+        <a href="skills.html">Skills & Coursework</a>
+    </nav>
+
+    <div class="container">
+        
+        <div class="card">
+            <h2>Educational Background</h2>
+            <ul>
+                <li>
+                    <strong>B.Sc. in Chemical Engineering</strong><br>
+                    Rajshahi University of Engineering and Technology (RUET), Bangladesh<br>
+                    <em>CGPA: 3.22 / 4.00 (Jan 2018 – Dec 2023)</em>
+                </li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>Awards & Credentials</h2>
+            <ul>
+                <li><strong>Technical Scholarship:</strong> Awarded annually from 1st to 4th year by the Ministry of Education, Bangladesh.</li>
+                <li><strong>IELTS Academic:</strong> Overall Band Score 7.0 (Listening: 7.5, Reading: 9.0, Writing: 5.5, Speaking: 6.0).</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Md Rafiul Islam. Built for PhD Applications.</p>
+    </footer>
+
 </body>
-</html>https://github.com/md-rafiulislam/md-rafiulislam.github.io
+</html>
