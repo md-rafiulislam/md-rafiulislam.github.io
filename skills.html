@@ -2,52 +2,178 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Md Rafiul Islam - Skills & Coursework</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Md Rafiul Islam | Skills & Coursework</title>
     <style>
-        body { font-family: Arial, sans-serif; line-height: 1.6; max-width: 900px; margin: 40px auto; padding: 0 20px; color: #333; }
-        h1, h2, h3 { color: #003366; }
-        .section-box { background: #f9f9f9; border-left: 4px solid #003366; padding: 20px; margin-bottom: 20px; }
-        nav a { margin-right: 15px; text-decoration: none; color: #003366; font-weight: bold; }
+        :root {
+            --primary: #1e3a8a;
+            --primary-dark: #172554;
+            --accent: #0284c7;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text: #1e293b;
+            --text-light: #64748b;
+        }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.05rem;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        nav {
+            background-color: #ffffff;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 15px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-light);
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary);
+            background-color: #f1f5f9;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -1px rgba(0,0,0,0.03);
+            border-top: 4px solid var(--accent);
+        }
+
+        h2 {
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #f1f5f9;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        li {
+            margin-bottom: 12px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        li::before {
+            content: "•";
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 1.2rem;
+            position: absolute;
+            left: 0;
+            top: -2px;
+        }
+
+        strong {
+            color: var(--primary-dark);
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
     </style>
 </head>
 <body>
+
+    <header>
+        <h1>Technical Skills & Coursework</h1>
+        <p>Engineering software, analytical methods, laboratory capabilities, and core academic preparation</p>
+    </header>
 
     <nav>
         <a href="index.html">Home & Education</a>
         <a href="research.html">Research & Projects</a>
         <a href="work.html">Work & Experience</a>
-        <a href="skills.html">Skills & Coursework</a>
+        <a href="skills.html" class="active">Skills & Coursework</a>
     </nav>
 
-    <h1>Technical Skills & Coursework</h1>
-    <p>Engineering software, analytical methods, laboratory capabilities, and core academic preparation.</p>
+    <div class="container">
+        
+        <div class="card">
+            <h2>Process Simulation & Software Tools</h2>
+            <ul>
+                <li><strong>Process Simulation & CAD:</strong> Aspen Plus, AutoCAD</li>
+                <li><strong>Data Analysis & Tools:</strong> Python (NumPy, Matplotlib), MATLAB, LaTeX, MS Excel</li>
+            </ul>
+        </div>
 
-    <div class="section-box">
-        <h2>Process Simulation & Software Tools</h2>
-        <ul>
-            <li><strong>Process Simulation & CAD:</strong> Aspen Plus, AutoCAD[cite: 2]</li>
-            <li><strong>Data Analysis & Tools:</strong> Python (NumPy, Matplotlib), MATLAB, LaTeX, MS Excel[cite: 2]</li>
-        </ul>
+        <div class="card">
+            <h2>Laboratory & Analytical Techniques</h2>
+            <ul>
+                <li>Spectrophotometry & Titration</li>
+                <li>Viscometry & Acid Digestion</li>
+                <li>Proximate & Ultimate Analysis</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>Core Engineering Coursework</h2>
+            <ul>
+                <li>Transport Phenomena & Chemical Reaction Engineering</li>
+                <li>Fluid Mechanics, Heat Transfer, & Mass Transfer / Separation Processes</li>
+                <li>Process Control & Instrumentation</li>
+                <li>Chemical Engineering Thermodynamics</li>
+            </ul>
+        </div>
+
     </div>
 
-    <div class="section-box">
-        <h2>Laboratory & Analytical Techniques</h2>
-        <ul>
-            <li>Spectrophotometry & Titration[cite: 2]</li>
-            <li>Viscometry & Acid Digestion[cite: 2]</li>
-            <li>Proximate & Ultimate Analysis[cite: 1, 2]</li>
-        </ul>
-    </div>
-
-    <div class="section-box">
-        <h2>Core Engineering Coursework</h2>
-        <ul>
-            <li>Transport Phenomena & Chemical Reaction Engineering[cite: 2]</li>
-            <li>Fluid Mechanics, Heat Transfer, & Mass Transfer / Separation Processes[cite: 2]</li>
-            <li>Process Control & Instrumentation[cite: 2]</li>
-            <li>Chemical Engineering Thermodynamics[cite: 2]</li>
-        </ul>
-    </div>
+    <footer>
+        <p>&copy; 2026 Md Rafiul Islam. Built for PhD Applications.</p>
+    </footer>
 
 </body>
 </html>
